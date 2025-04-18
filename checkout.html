@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Urban Palate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <div class="header-container">
+             <div class="logo">
+                <a href="index.html" aria-label="Urban Palate Home">
+                     <img src="logo.png" alt="Urban Palate Logo" height="45">
+                </a>
+            </div>
+            <div class="header-actions">
+                 <nav aria-label="Main Navigation" id="main-nav">
+                     <a href="index.html">Home</a>
+                     <a href="index.html#menu-section">Menu</a>
+                 </nav>
+                 <a href="cart.html" id="cart-link"><i class="fas fa-shopping-cart" aria-hidden="true"></i> Cart (<span id="cart-count-display">0</span>)</a>
+                 <div id="user-info" style="display: none;">
+                      <span id="user-email-display"></span>
+                      <button id="logout-button" class="button-logout">Logout</button>
+                 </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <h2 class="section-title"><span>Final Step: Checkout</span></h2>
+
+        <section id="checkout-summary" class="checkout-section" aria-label="Order Summary">
+             <p>Loading summary...</p>
+        </section>
+
+        <section class="checkout-section" aria-labelledby="checkout-form-heading">
+            <h3 id="checkout-form-heading" class="sr-only">Delivery and Payment Information</h3>
+
+            <form id="checkout-form" style="display: none;">
+                <h3><i class="fas fa-truck" aria-hidden="true"></i> Delivery Details</h3>
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required aria-required="true" autocomplete="name">
+                </div>
+                <div class="form-group">
+                    <label for="address">Delivery Address:</label>
+                    <input type="text" id="address" name="address" required aria-required="true" autocomplete="street-address">
+                </div>
+                 <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required aria-required="true" placeholder="e.g., 9876543210" autocomplete="tel">
+                </div>
+
+                <h3><i class="fas fa-credit-card" aria-hidden="true"></i> Payment Method</h3>
+                 <fieldset class="form-group form-group-radio">
+                     <legend class="sr-only">Select Payment Method</legend> <!-- Keep for accessibility -->
+                     <label><input type="radio" name="payment" value="card" checked> Credit/Debit Card</label>
+                     <label><input type="radio" name="payment" value="upi"> UPI</label>
+                     <label><input type="radio" name="payment" value="cash"> Cash on Delivery</label>
+                 </fieldset>
+
+                <button type="submit" id="place-order-button" class="button place-order-main-btn">
+                    <span class="button-text">Place Your Order</span>
+                    <span class="button-loader" style="display: none;"><i class="fas fa-spinner fa-spin"></i></span>
+                </button>
+            </form>
+        </section>
+
+         <div id="order-success-message" class="checkout-section" style="display: none;" tabindex="-1">
+            <h3><i class="fas fa-check-circle" aria-hidden="true"></i> Order Placed!</h3>
+            <p>Thank you! Your delicious food is on its way (Simulation).</p>
+            <a href="index.html" class="button" style="margin-top: 15px;">Back to Menu</a>
+        </div>
+    </main>
+
+    <footer>
+       <div class="footer-content">
+            <p>© 2024 Urban Palate. Taste the City Life.</p>
+            <div class="footer-links" aria-label="Footer Links">
+                <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Contact Us</a>
+            </div>
+            <div class="social-icons" aria-label="Social Media Links">
+                 <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                 <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                 <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+       </div>
+    </footer>
+
+    <div id="toast-notification" class="toast" role="alert" aria-live="assertive"></div>
+
+     <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    <!-- Your script -->
+    <script src="script.js" defer></script>
+</body>
+</html>

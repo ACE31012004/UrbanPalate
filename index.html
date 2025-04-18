@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Palate - Vibrant Flavors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" aria-label="Urban Palate Home">
+                    <img src="logo.png" alt="Urban Palate Logo" height="45">
+                </a>
+            </div>
+            <div class="header-actions">
+                 <nav aria-label="Main Navigation" id="main-nav">
+                     <a href="index.html" class="active" aria-current="page">Home</a>
+                     <a href="index.html#menu-section">Menu</a>
+                 </nav>
+                 <a href="cart.html" id="cart-link"><i class="fas fa-shopping-cart" aria-hidden="true"></i> Cart (<span id="cart-count-display">0</span>)</a>
+                 <div id="user-info" style="display: none;">
+                     <span id="user-email-display"></span>
+                     <button id="logout-button" class="button-logout">Logout</button>
+                 </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Urban Palate: City Bites, Delivered Bright.</h1>
+            <p>Explore a world of flavor, crafted with passion and delivered to your doorstep.</p>
+            <a href="#menu-section" class="button hero-button">Discover Menu <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
+        </div>
+    </section>
+
+    <main id="main-content">
+        <h2 class="section-title"><span>Taste The Excitement</span></h2>
+        <section id="menu-section" aria-label="Menu Items">
+            <div id="menu-items-container">
+                <p>Loading menu...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+       <div class="footer-content">
+            <p>© 2024 Urban Palate. Taste the City Life.</p>
+            <div class="footer-links" aria-label="Footer Links">
+                <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Contact Us</a>
+            </div>
+            <div class="social-icons" aria-label="Social Media Links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+       </div>
+    </footer>
+
+    <div id="toast-notification" class="toast" role="alert" aria-live="assertive"></div>
+
+    <!-- Firebase SDKs (v9 Compat Versions) -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    <!-- Your script -->
+    <script src="script.js" defer></script>
+</body>
+</html>

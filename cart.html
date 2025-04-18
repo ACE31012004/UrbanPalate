@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - Urban Palate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <div class="header-container">
+             <div class="logo">
+                <a href="index.html" aria-label="Urban Palate Home">
+                     <img src="logo.png" alt="Urban Palate Logo" height="45">
+                </a>
+            </div>
+            <div class="header-actions">
+                 <nav aria-label="Main Navigation" id="main-nav">
+                     <a href="index.html">Home</a>
+                     <a href="index.html#menu-section">Menu</a>
+                 </nav>
+                 <a href="cart.html" id="cart-link" class="active" aria-current="page"><i class="fas fa-shopping-cart" aria-hidden="true"></i> Cart (<span id="cart-count-display">0</span>)</a>
+                 <div id="user-info" style="display: none;">
+                      <span id="user-email-display"></span>
+                      <button id="logout-button" class="button-logout">Logout</button>
+                 </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <h2 class="section-title"><span>Your Shopping Cart</span></h2>
+
+        <section id="cart-items-container" aria-label="Items in your cart">
+            <p>Loading cart...</p>
+        </section>
+
+        <div id="empty-cart-message" style="display: none;">
+            <p>Your cart looks a little lonely!</p>
+            <a href="index.html#menu-section" class="button">Find Something Delicious</a>
+        </div>
+
+        <section id="cart-summary" aria-label="Order Summary" style="display: none;">
+             <p>Total: <span id="cart-total">₹ 0.00</span></p>
+             <button id="checkout-button" class="button">Proceed to Checkout <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+        </section>
+    </main>
+
+    <footer>
+       <div class="footer-content">
+            <p>© 2024 Urban Palate. Taste the City Life.</p>
+            <div class="footer-links" aria-label="Footer Links">
+                <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Contact Us</a>
+            </div>
+            <div class="social-icons" aria-label="Social Media Links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+       </div>
+    </footer>
+
+    <div id="toast-notification" class="toast" role="alert" aria-live="assertive"></div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    <!-- Your script -->
+    <script src="script.js" defer></script>
+</body>
+</html>
